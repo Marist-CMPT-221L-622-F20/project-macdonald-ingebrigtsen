@@ -1,0 +1,22 @@
+{
+  "name": "project-macdonald-ingebrigtsen",
+  "version": "0.0.1",
+  "description": "Software dev 2 project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marist-CMPT-221L-622-F20/project-macdonald-ingebrigtsen.git"
+  },
+  "author": "Colin Macdonald and Jacob Ingebrigtsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marist-CMPT-221L-622-F20/project-macdonald-ingebrigtsen/issues"
+  },
+  "homepage": "https://github.com/Marist-CMPT-221L-622-F20/project-macdonald-ingebrigtsen#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
