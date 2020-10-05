@@ -1,10 +1,15 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+app.use(express.static('client/public'));
+const port = 3000;
 
 app.get('/', (req, res) => {
     res.send('Hello World!!!')
 })
+
+app.get('/tour', function (req, res) {
+    res.sendFile('tour.html', { root: './client/views' });
+});
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
