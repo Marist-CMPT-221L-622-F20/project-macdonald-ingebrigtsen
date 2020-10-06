@@ -25,6 +25,9 @@ app.get('/2ImageTemplate', function (req, res) {
 app.get('/4ImageTemplate', function (req, res) {
     res.sendFile('4ImageTemplate.html', { root: './client/views' });
 });
+app.get('/AlliedSide', function (req, res) {
+    res.sendFile('AlliedSide.html', { root: './client/views' });
+});
 
 app.get('/topHeader', function (req, res) {
     res.sendFile('topHeader.html', { root: './client/views' });

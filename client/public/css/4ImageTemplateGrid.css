@@ -5,6 +5,7 @@
   width:100vw;
   height:45vw;
   grid-gap:10px 10px;
+  grid-template-columns: repeat( auto-fill, minmax(250px, 1fr) );
 }
 body {
     display: inline-grid;
