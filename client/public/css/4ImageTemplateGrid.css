@@ -11,18 +11,19 @@ body {
 }
 
 header{
-  /*Row for up down 1-6*/
+  /*UpDown*/
   grid-row-start: 1;
   grid-row-end: 1 ;
-  /*Column for accross screen 1-5*/
+  /*Across*/
   grid-column-start: 1; 
   grid-column-end: 7;
+  background-color:red;
 }
 
 nav {
     /*Row for up down 1-6*/
   grid-row-start: 2;
-  grid-row-end: 5 ;
+  grid-row-end: 7 ;
   /*Column for accross screen 1-5*/
   grid-column-start: 1; 
   grid-column-end: 1;
@@ -38,7 +39,7 @@ main{
 aside { 
     /*Row for up down 1-6*/
   grid-row-start: 3;
-  grid-row-end: 5 ;
+  grid-row-end: 7 ;
   /*Column for accross screen 1-5*/
   grid-column-start: 6; 
   grid-column-end: 6;
@@ -46,10 +47,10 @@ aside {
 }
 #paragraph1{
     /*Row for up down 1-6*/
-  grid-row-start: 4;
-  grid-row-end: 5 ;
+  grid-row-start: 2;
+  grid-row-end: 4 ;
   /*Column for accross screen 1-4*/
-  grid-column-start: 2; 
+  grid-column-start: 3; 
   grid-column-end: 4;
     background-color: cadetblue;
     margin: 0px;
@@ -58,12 +59,33 @@ aside {
 #paragraph2{
   /*Row for up down 1-6*/
   grid-row-start: 4;
-  grid-row-end: 5 ;
+  grid-row-end: 7 ;
   /*Column for accross screen 1-4*/
-  grid-column-start: 4; 
-  grid-column-end: 6; 
+  grid-column-start: 3; 
+  grid-column-end: 4; 
     background-color:rebeccapurple;
     margin: 0px;
+}
+    #image3{
+      /*Row for up down 1-6*/
+    grid-row-start: 2;
+    grid-row-end: 4 ;
+    /*Column for accross screen 1-4*/
+    grid-column-start: 5; 
+    grid-column-end: 5;
+      background-color: crimson;
+      margin: 0px;
+      
+  }
+  #image4{
+    /*Row for up down 1-6*/
+    grid-row-start: 4;
+    grid-row-end: 7 ;
+    /*Column for accross screen 1-4*/
+    grid-column-start: 5; 
+    grid-column-end: 5; 
+      background-color:darkorange;
+      margin: 0px;
 }
 #image1{
     /*Row for up down 1-6*/
@@ -71,15 +93,35 @@ aside {
   grid-row-end: 4 ;
   /*Column for accross screen 1-4*/
   grid-column-start: 2; 
-  grid-column-end: 4;
+  grid-column-end: 3;
     background-color:aquamarine;
 }
 #image2{
   /*Row for up down 1-6*/
-  grid-row-start: 2;
-  grid-row-end: 4 ;
+  grid-row-start: 4;
+  grid-row-end: 7 ;
   /*Column for accross screen 1-4*/
-  grid-column-start: 4; 
-  grid-column-end: 6;
+  grid-column-start: 2; 
+  grid-column-end: 3;
     background-color:aqua;
+}
+#paragraph3{
+  /*Row for up down 1-6*/
+grid-row-start: 2;
+grid-row-end: 4 ;
+/*Column for accross screen 1-4*/
+grid-column-start: 4; 
+grid-column-end: 5;
+  background-color:darkgoldenrod;
+  margin: 0px;
+}
+#paragraph4{
+/*Row for up down 1-6*/
+grid-row-start:4;
+grid-row-end: 7 ;
+/*Column for accross screen 1-4*/
+grid-column-start: 4; 
+grid-column-end: 5;
+  background-color:seagreen;
+  margin: 0px;
 }
