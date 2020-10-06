@@ -1,27 +1,43 @@
 <style>
+    body{
+        margin: 0;
+    }
     #contain {
         display: flex;
         flex-direction: row;
+        height: 4rem;
+        
     }
 
     #left {
         display: flex;
         flex-direction: row;
         flex-grow: 1;
+        padding: .5rem;
     }
 
-    #left {
+    #right {
         display: flex;
         flex-direction: row;
-        align-content: flex-end;
+        justify-content: flex-end;
         flex-grow: 1;
+        padding: .5rem;
+    }
+
+    h1 {
+        margin: auto 1rem;
+    }
+
+    button {
+        padding: 1rem;
+        margin-right: 1rem;
     }
 </style>
 
 <div id="contain">
-    <div id="left">
-        <button onclick="window.top.location.href='/tour'">Home</button>
-        <p>Site Name</p>
+    <div onclick="window.top.location.href='/tour'" id="left">
+        <img src="/images/Recall.webp">
+        <h1>Virtual Tour</h1>
 
     </div>
     <div id="right">

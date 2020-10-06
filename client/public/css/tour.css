@@ -2,6 +2,7 @@ h1 {
   background-color: lightblue;
   text-align: center;
   width: fit-content;
+  margin: 1rem auto;
 }
 
 main {
@@ -9,7 +10,7 @@ main {
   flex-direction: row;
   justify-content: space-between;
   flex-basis: auto;
-  gap: 5rem;
+  gap: 4%;
   align-items: flex-start;
 }
 
