@@ -1,0 +1,46 @@
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: calc(100%-2rem);
+  height: calc(100% - 2rem);
+  margin: 0;
+  padding: 1rem;
+}
+
+main,
+aside,
+section {
+  padding: 1rem;
+}
+
+
+/* Color coding to tell elements apart */
+
+header {
+  background-color: #f99;
+  outline-width: 3px;
+  outline-color: #933;
+}
+
+nav {
+  background-color: #9fc;
+  outline-width: 3px;
+  outline-color: #933;
+}
+
+main {
+  background-color: #9cf;
+  outline-width: 3px;
+  outline-color: #369;
+}
+
+aside {
+  background-color: #fc9;
+  outline-width: 3px;
+  outline-color: #993;
+}

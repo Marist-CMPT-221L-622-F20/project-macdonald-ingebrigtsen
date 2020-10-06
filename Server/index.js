@@ -10,6 +10,9 @@ app.get('/', (req, res) => {
 app.get('/tour', function (req, res) {
     res.sendFile('tour.html', { root: './client/views' });
 });
+app.get('/2ImageTemplate', function (req, res) {
+    res.sendFile('2ImageTemplate.html', { root: './client/views' });
+});
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
