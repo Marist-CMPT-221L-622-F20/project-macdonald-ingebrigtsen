@@ -11,6 +11,14 @@ app.get('/tour', function (req, res) {
     res.sendFile('tour.html', { root: './client/views' });
 });
 
+app.get('/preferences', function (req, res) {
+    res.sendFile('preferences.html', { root: './client/views' });
+});
+
+app.get('/about', function (req, res) {
+    res.sendFile('about.html', { root: './client/views' });
+});
+
 app.get('/2ImageTemplate', function (req, res) {
     res.sendFile('2ImageTemplate.html', { root: './client/views' });
 });

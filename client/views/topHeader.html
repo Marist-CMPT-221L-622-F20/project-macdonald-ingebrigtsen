@@ -4,29 +4,30 @@
         flex-direction: row;
     }
 
-    #left{
+    #left {
         display: flex;
         flex-direction: row;
         flex-grow: 1;
     }
 
-    #left{
+    #left {
         display: flex;
-        flex-direction: row; 
+        flex-direction: row;
         align-content: flex-end;
         flex-grow: 1;
     }
 </style>
+
 <div id="contain">
     <div id="left">
-        <button>Home</button>
+        <button onclick="window.top.location.href='/tour'">Home</button>
         <p>Site Name</p>
 
     </div>
     <div id="right">
         <button>Start the tour</button>
-        <button>Preferences</button>
-        <button>About</button>
+        <button onclick="window.top.location.href='/preferences'">Preferences</button>
+        <button onclick="window.top.location.href='/about'">About</button>
 
     </div>
 
