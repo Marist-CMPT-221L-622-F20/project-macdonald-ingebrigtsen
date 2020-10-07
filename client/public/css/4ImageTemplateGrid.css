@@ -63,8 +63,9 @@ aside {
     /*Column for accross screen 1-4*/
     grid-column-start: 5; 
     grid-column-end: 5;
-      background-color: crimson;
+      background-color: gainsboro;
       margin: 0px;
+      width:100%;
       
   }
   #image4{
@@ -74,8 +75,9 @@ aside {
     /*Column for accross screen 1-4*/
     grid-column-start: 5; 
     grid-column-end: 5; 
-      background-color:darkorange;
+      background-color:gainsboro;
       margin: 0px;
+      width:100%;
 }
 #image1{
     /*Row for up down 1-6*/
@@ -84,7 +86,8 @@ aside {
   /*Column for accross screen 1-4*/
   grid-column-start: 2; 
   grid-column-end: 3;
-    background-color:aquamarine;
+    background-color:gainsboro;
+    width:100%;
 }
 #image2{
   /*Row for up down 1-6*/
@@ -93,7 +96,8 @@ aside {
   /*Column for accross screen 1-4*/
   grid-column-start: 2; 
   grid-column-end: 3;
-    background-color:aqua;
+    background-color:gainsboro;
+    width:100%;
 }
 #paragraph3{
   /*Row for up down 1-6*/
