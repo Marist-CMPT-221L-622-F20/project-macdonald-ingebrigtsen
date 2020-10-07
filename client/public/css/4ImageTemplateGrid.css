@@ -2,7 +2,7 @@
 /* TODO #1 Edit these rules to match Wireframe 2 diagram */
 .grid-container {
   display: grid;
-  width:100vw;
+  width:98.5vw;
   height:45vw;
   grid-gap:10px 10px;
   grid-template-columns: repeat( auto-fill, minmax(250px, 1fr) );
@@ -42,8 +42,9 @@ aside {
   /*Column for accross screen 1-4*/
   grid-column-start: 3; 
   grid-column-end: 4;
-    background-color: cadetblue;
+    background-color: whitesmoke;
     margin: 0px;
+    padding:2rem;
     
 }
 #paragraph2{
@@ -53,8 +54,9 @@ aside {
   /*Column for accross screen 1-4*/
   grid-column-start: 3; 
   grid-column-end: 4; 
-    background-color:rebeccapurple;
+    background-color:whitesmoke;
     margin: 0px;
+    padding:2rem;
 }
     #image3{
       /*Row for up down 1-6*/
@@ -106,8 +108,9 @@ grid-row-end: 4 ;
 /*Column for accross screen 1-4*/
 grid-column-start: 4; 
 grid-column-end: 5;
-  background-color:darkgoldenrod;
+  background-color:whitesmoke;
   margin: 0px;
+  padding:2rem;
 }
 #paragraph4{
 /*Row for up down 1-6*/
@@ -116,6 +119,7 @@ grid-row-end: 7 ;
 /*Column for accross screen 1-4*/
 grid-column-start: 4; 
 grid-column-end: 5;
-  background-color:seagreen;
+  background-color:whitesmoke;
   margin: 0px;
+  padding:2rem;
 }
