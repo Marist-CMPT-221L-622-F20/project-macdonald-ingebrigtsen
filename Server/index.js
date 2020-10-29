@@ -2,6 +2,12 @@ const express = require('express');
 const app = express();
 app.use(express.static('client/public'));
 const port = 3000;
+const parser = require("body-parser");
+const routes = require("./routes.js");
+
+app.use(parser.urlencoded({ extended: true }));
+app.use(parser.json());
+app.use("/api", routes);
 
 app.get('/', (req, res) => {
     res.send('Hello World!!!')

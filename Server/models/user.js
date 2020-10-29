@@ -15,7 +15,7 @@ function User(name, currentLocation, tourType) {
 
     this.name = name;
     this.ID = nextID++;
-    this.dateJoined = date.toISOString;
+    this.dateJoined=date.toISOString();
     this.currentLocation = currentLocation ? currentLocation : "Home";
     this.tourType = tourType ? tourType : "Short";
 }
