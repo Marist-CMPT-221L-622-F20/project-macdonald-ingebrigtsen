@@ -26,15 +26,15 @@ router.route("/areas/:id")
   .put(locCtlr.updateArea)
   .delete(locCtlr.deleteArea);
 
-  // route for the collection of all champions
+// route for the collection of all champions
 router.route("/champions")
-.get(champCtlr.listChampions)
-.post(champCtlr.createChampion);
+  .get(champCtlr.listChampions)
+  .post(champCtlr.createChampion);
 
 // route for an individual champion resource
 router.route("/champions/:ChampName")
-.get(champCtlr.readChampion)
-.put(champCtlr.updateChampion)
-.delete(champCtlr.deleteChampion);
+  .get(champCtlr.readChampion)
+  .put(champCtlr.updateChampion)
+  .delete(champCtlr.deleteChampion);
 
 module.exports = router; // needed in order to make sure that app.js can load the router object

@@ -5,6 +5,8 @@
  *   - NumofChampions (a Int)
  */
 
+//TODO: This model currently doesn't have a controller
+
 // Constructor for instances of the FighterType model
 function FighterType(ArchType, Location, NumofChampions) {
 
@@ -15,7 +17,7 @@ function FighterType(ArchType, Location, NumofChampions) {
 
 exports.FighterType = FighterType
 exports.FighterTypes = [
-    new FighterType("ADC","Bot ","3"),
-    new FighterType("Tank","Top","2"),
-    new FighterType("Mage","Mid","3"),
+    new FighterType("ADC", "Bot ", "3"),
+    new FighterType("Tank", "Top", "2"),
+    new FighterType("Mage", "Mid", "3"),
 ];

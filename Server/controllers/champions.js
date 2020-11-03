@@ -16,7 +16,7 @@ exports.createChampion = (req, res) => {
     if (!req.body.Difficulty) // request data must contain Difficulty attribute
         return res.status(400).send("Must specify the Difficulty");
 
-    const u = new Champ.Champion(req.body.ChampName,req.body.ArchType,req.body.Difficulty); // create a new champion instance
+    const u = new Champ.Champion(req.body.ChampName, req.body.ArchType, req.body.Difficulty); // create a new champion instance
     Champ.champions.push(u); // insert the new champion into collection
     res.status(201).send("/Champions/" + u.ChampName); // send appropriate response back
 };
@@ -26,14 +26,14 @@ exports.readChampion = (req, res) => {
     if (!req.params.ChampName) // request must provChampNamee an ChampName parameter
         return res.status(400).send("Missing champion ChampName");
 
-     for (let index = 0; index < Champ.champions.length; index++) {
-        let champObject=Champ.champions[index];
-        if(champObject){
-            let champName= champObject.ChampName;
-            let input=req.params.ChampName;
-            if(champName==input)
-                var c=champObject;
-        }       
+    for (let index = 0; index < Champ.champions.length; index++) {
+        let champObject = Champ.champions[index];
+        if (champObject) {
+            let champName = champObject.ChampName;
+            let input = req.params.ChampName;
+            if (champName == input)
+                var c = champObject;
+        }
     }
     if (c)  // did we find a matching champion?
         res.send(c);
@@ -49,12 +49,12 @@ exports.updateChampion = (req, res) => {
         return res.status(400).send("Missing champion data");
 
     for (let index = 0; index < Champ.champions.length; index++) {
-        let champObject=Champ.champions[index];
-        if(champObject){
-            let champName= champObject.ChampName;
-            let input=req.params.ChampName;
-            if(champName==input)
-                var c=champObject;
+        let champObject = Champ.champions[index];
+        if (champObject) {
+            let champName = champObject.ChampName;
+            let input = req.params.ChampName;
+            if (champName == input)
+                var c = champObject;
         }
     }
     if (!c)  // ChampName we find a matching champion?
@@ -74,16 +74,15 @@ exports.deleteChampion = (req, res) => {
         return res.status(400).send("Missing champion ChampName");
 
     for (let index = 0; index < Champ.champions.length; index++) {
-        let champObject=Champ.champions[index];
-        if(champObject){
-            let champName= champObject.ChampName;
-            let input=req.params.ChampName;
-            if(champName==input)
-                var i=index;
+        let champObject = Champ.champions[index];
+        if (champObject) {
+            let champName = champObject.ChampName;
+            let input = req.params.ChampName;
+            if (champName == input)
+                var i = index;
         }
     }
-    console.log("for done. i: "+i);
-    if (!i && i !==0)  // did we find a matching champion?
+    if (!i && i !== 0)  // did we find a matching champion?
         return res.status(404).send("Champion ChampName " + req.params.ChampName + " not found"); // requested champion does not exist
     delete Champ.champions[i];
 
