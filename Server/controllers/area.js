@@ -15,13 +15,13 @@ exports.createArea = (req, res) => {
         return res.status(400).send("Must specify the area sublocation");
 
     const a = new Loc.Area(req.body.location, req.body.sublocation); // create a new area instance
-    if (req.body.description !== undefined) //Skips properties that don't exist
-            a.description = req.body.description;
+    if (req.body.description !== undefined) // Description is optional, but add one if provided
+        a.description = req.body.description;
     Loc.areas.push(a); // insert the new area into collection
     res.status(201).send("/areas/" + a.ID); // send appropriate response back
 };
 
-// Read a area resource from the server
+// Read an area resource from the server
 exports.readArea = (req, res) => {
     if (!req.params.id) // request must provide an id parameter
         return res.status(400).send("Missing area ID");
@@ -33,7 +33,7 @@ exports.readArea = (req, res) => {
         res.status(404).send("Area ID " + req.params.id + " not found");
 };
 
-// Update a area resource
+// Update an area resource
 exports.updateArea = (req, res) => {
     if (!req.params.id) // request must provide an id parameter
         return res.status(400).send("Missing area ID");
@@ -53,7 +53,7 @@ exports.updateArea = (req, res) => {
     res.sendStatus(204);
 };
 
-// Delete a area resource
+// Delete an area resource
 exports.deleteArea = (req, res) => {
     if (!req.params.id) // request must provide an id parameter
         return res.status(400).send("Missing area ID");
