@@ -15,7 +15,7 @@ function FighterType(ArchType, Location, NumofChampions) {
 
 exports.FighterType = FighterType
 exports.FighterTypes = [
-    new FighterType("ADC","BOT ","3"),
+    new FighterType("ADC","Bot ","3"),
     new FighterType("Tank","Top","2"),
     new FighterType("Mage","Mid","3"),
 ];

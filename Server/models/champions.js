@@ -14,7 +14,7 @@ function Champion(ChampName, ArchType, Difficulty) {
 }
 
 exports.Champion = Champion
-exports.Champions = [
+exports.champions = [
     new Champion("Ryze","Mage","Hard"),
     new Champion("Sion","Tank","Easy"),
     new Champion("Warwick","Fighter","Easy"),
