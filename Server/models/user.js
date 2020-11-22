@@ -1,28 +1,34 @@
 /* User model represents a user
  * having the following properties:
  *   - name (a String)
- *   - ID (an integer)
  *   - dateJoined (a string)
  *   - currentLocation (a string)
  *   - tourType (a string)
  */
 
-let nextID = 0;
+const Seq = require("sequelize");
+const db = new Seq("database", "username", "password", {
+    dialect: "sqlite",
+    storage: "server/db/students.sqlite"
+});
 
-// Constructor for instances of the User model
-function User(name, currentLocation, tourType) {
-    const date = new Date();
+const User = db.define("user", {
+    name: { type: Seq.STRING, allowNull: false },
+    dateJoined: { type: Seq.STRING },
+    currentLocation: { type: Seq.STRING, defaultValue: "Home" },
+    tourType: { type: Seq.STRING, defaultValue: "Short" }
+});
 
-    this.name = name;
-    this.ID = nextID++;
-    this.dateJoined = date.toISOString();
-    this.currentLocation = currentLocation ? currentLocation : "Home";
-    this.tourType = tourType ? tourType : "Short";
-}
+db.sync()
+    .then(async function () {
+        if ((await User.count()).valueOf() == 0) {
+            await User.create({
+                name: "User",
 
-exports.User = User
-exports.users = [
-    new User("Alice"),
-    new User("Bob", "Jungle", "Long"),
-    new User("Carol", "Lanes")
-];
+            });
+            console.log("Populated default user");
+        }
+
+    });
+
+module.exports = User;

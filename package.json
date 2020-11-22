@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Marist-CMPT-221L-622-F20/project-macdonald-ingebrigtsen#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "sequelize": "^3.30.0",
+    "sqlite3": "^5.0.0"
   }
 }

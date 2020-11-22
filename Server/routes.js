@@ -15,6 +15,11 @@ router.route("/users/:id")
   .put(usrCtlr.updateUser)
   .delete(usrCtlr.deleteUser);
 
+// route for a user and property  
+router.route("/users/:id/:prop")
+  .get(usrCtlr.readUser)
+  .put(usrCtlr.updateUser);
+
 // route for the collection of all areas
 router.route("/areas")
   .get(locCtlr.listAreas)
