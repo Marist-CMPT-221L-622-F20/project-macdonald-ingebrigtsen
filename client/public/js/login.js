@@ -21,5 +21,33 @@ window.addEventListener("load", function () {
 
                 });
         }
-    })
+    });
+
+    const SignUpButton = document.getElementById("Sign_Up")
+    SignUpButton.addEventListener("click", function (evt) {
+
+        const Username = document.getElementById("InputField").value;
+        if (Username !== "") {
+            const messageData = { name: Username };
+            fetch(apiBase + "/users/", {
+                method: "POST",
+                body: JSON.stringify(messageData),
+                headers: {
+                    "Content-type": "application/json"
+                }
+            })
+                .then(res => {
+                    if (res.status === 500) {
+                        const outputElem = document.querySelector("output");
+                        outputElem.innerHTML = "UserName Already In Use";
+                    }
+                    else if (res.status === 201) {
+                        const outputElem = document.querySelector("output");
+                        outputElem.innerHTML = "User successfully Created";
+                    }
+
+                    // TODO add some error-handling
+                });
+        }
+    });
 });
