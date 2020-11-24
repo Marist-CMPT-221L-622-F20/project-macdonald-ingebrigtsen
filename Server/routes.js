@@ -1,8 +1,10 @@
 const express = require("express");
 const usrCtlr = require("./controllers/user.js");
-const locCtlr = require("./controllers/area.js");
+const locCtlr = require("./controllers/location.js");
 const champCtlr = require("./controllers/champions.js");
 const router = express.Router();
+
+///////////////
 
 // route for the collection of all users
 router.route("/users")
@@ -20,16 +22,25 @@ router.route("/users/:name/:prop")
   .get(usrCtlr.readUser)
   .put(usrCtlr.updateUser);
 
-// route for the collection of all areas
-router.route("/areas")
-  .get(locCtlr.listAreas)
-  .post(locCtlr.createArea);
+////////////////
 
-// route for an individual area resource
-router.route("/areas/:id")
-  .get(locCtlr.readArea)
-  .put(locCtlr.updateArea)
-  .delete(locCtlr.deleteArea);
+// route for the collection of all locations
+router.route("/locations")
+  .get(locCtlr.listLocations)
+  .post(locCtlr.createLocation);
+
+// route for an individual location resource
+router.route("/locations/:name")
+  .get(locCtlr.readLocation)
+  .put(locCtlr.updateLocation)
+  .delete(locCtlr.deleteLocation);
+
+// route for a location and property  
+router.route("/locations/:name/:prop")
+  .get(locCtlr.readLocation)
+  .put(locCtlr.updateLocation);
+
+//////////////
 
 // route for the collection of all champions
 router.route("/champions")
