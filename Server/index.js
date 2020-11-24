@@ -12,6 +12,9 @@ app.use("/api", routes);
 app.get('/', (req, res) => {
     res.send('Hello World!!!')
 })
+app.get('/home', function (req, res) {
+    res.sendFile('home.html', { root: './client/views' });
+});
 
 app.get('/tour', function (req, res) {
     res.sendFile('tour.html', { root: './client/views' });

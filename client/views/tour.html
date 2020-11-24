@@ -1,55 +1,65 @@
 <!doctype html>
+<!-- A minimal HTML5 skeleton -->
 <html lang="en">
 
 <head>
-    <title>Tour</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/overall.css">
-    <link rel="stylesheet" href="/css/tour.css">
+  <title>Template</title>
+  <meta charset="utf-8">
+  <link href="css/overall.css" rel="stylesheet" type="text/css" media="screen">
+  <link href="css/4ImageTemplate.css" rel="stylesheet" type="text/css" media="screen">
+  <link href="css/4ImageTemplateGrid.css" rel="stylesheet" type="text/css" media="screen">
+  <script src="js/tour.js"></script>
 </head>
 
 <body>
-    <header>
-        <iframe src="/topHeader"></iframe>
-    </header>
-    <h2>Welcome to the virtual tour site</h2>
-    <main>
-        <img src="/images/Summoner's_Rift_Update_Map.png" alt="Pic of map">
-        <p>
-            Welcome to summoners rift, this is a tour of the popular moba, league of legends. 
 
-            League of legends is a 5v5 team game where your obective is to destroy the enemies nexus. You can fulfill many different roles and
-            styles of play and theres a champion for everyone! By the end of this tour we are hoping to give you a basic overview of the map and many of the 
-            games systems that are on it . Hope you enjoy!
-            <br>
-            <br>
-            This tour was done by Colin MacDonald and Jacob Ingebrigtsen.</p>
+  <header>
+    <iframe src="/topHeader"></iframe>
+  </header>
+  <div class="grid-container">
 
-        <aside>
-            <button type="button" onclick="window.top.location.href='/AlliedSide'">Start the tour</button>
-            <p>By Clicking this button you will be transported onto summoners rift a plane of existance where champions are summoned 
-                in order to fight to settle their differences instead of bringing desetruction onto runeterra. At least that was what the lore was
-            until the entire thing was changed and now the game isn't even canon within its own lore.</p>
-            <br>
-            <br>
-            By the way, if at any point you want to return to here, hit the recall button in the top right, its the blue one with the circles.
+    <nav>
+      <h2>Click on a location to begin</h2>
+      <ul>
+        <li><button id="alliedSide">AlliedSide</button></li>
+        <li><button id="jungle">Jungle</button></li>
+        <li><button id="lanes">Lanes</button> </li>
+        <li><button id="river">River</button></li>
+      </ul>
+    </nav>
 
-        </aside>
+    <aside>
+      ASIDE
+    </aside>
 
-    </main>
+    <img src="/images/unknown.jpg.png" alt="oops no img" id="image1">
 
-    <h3>What is this? (click to find out)</h3>
-    <p></p>
+    <p id='paragraph1'>
 
-    <script src="/js/tour.js"></script>
+    </p>
 
-</body>
+    <img src="/images/unknown.jpg.png" alt="oops no img" id="image2">
 
-</html>
+    <p id='paragraph2'>
 
+    </p>
 
-<!-- 1. Make a view for each page thats getting one
-2. Code the templates into HTML
-3. Code Templates into CSS (decide between grid and flexbox
-4. Code in individual pictures to get the website looking good.
-5. Async Javscript -->
+    <img src="/images/unknown.jpg.png" alt="oops no img" id="image3">
+
+    <p id='paragraph3'>
+
+    </p>
+
+    <img src="/images/unknown.jpg.png" alt="oops no img" id="image4">
+
+    <p id='paragraph4'>
+
+    </p>
+
+    
+
+  </div>
+
+  <footer>
+    FOOTER
+  </foo
