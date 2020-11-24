@@ -17,6 +17,10 @@ app.get('/tour', function (req, res) {
     res.sendFile('tour.html', { root: './client/views' });
 });
 
+app.get('/login', function (req, res) {
+    res.sendFile('login.html', { root: './client/views' });
+});
+
 app.get('/preferences', function (req, res) {
     res.sendFile('preferences.html', { root: './client/views' });
 });
