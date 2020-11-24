@@ -30,7 +30,7 @@ exports.createUser = async (req, res) => {
         return res.status(400).send("Must specify the user name");
     if (await Usr.findOne({ where: { name: req.body.name } }) == undefined) {//Username must be unique
         const u = await Usr.create(req.body); // pass the entire JSON object to the model constructor
-        res.status(201).send("/users/" + u.id); // send appropriate response back
+        res.status(201).send("/users/" + u.name); // send appropriate response back
     } else {
         res.status(500).send("User name is already in use.")
     }
@@ -38,12 +38,12 @@ exports.createUser = async (req, res) => {
 
 // Read a user resource from the server
 exports.readUser = async (req, res) => {
-    if (!req.params.id) // request must provide an id parameter
-        return res.status(400).send("Missing user ID");
+    if (!req.params.name) // request must provide a name parameter
+        return res.status(400).send("Missing user name");
 
-    const u = await Usr.findById(req.params.id);
+    const u = await Usr.findOne({ where: { name: req.params.name } });
     if (u === undefined || u == null)  // did we fail to find a matching User?
-        return res.status(404).send("User ID " + req.params.id + " not found");
+        return res.status(404).send("User name " + req.params.name + " not found");
 
     if (req.params.prop) { // did client provide a property (i.e. subresource) name
         if (u[req.params.prop] === undefined) // check if the value associated with prop is defined
@@ -56,15 +56,15 @@ exports.readUser = async (req, res) => {
 
 // Update a user resource
 exports.updateUser = async (req, res) => {
-    if (!req.params.id) // request must provide an id parameter
-        return res.status(400).send("Missing user ID");
+    if (!req.params.name) // request must provide a name parameter
+        return res.status(400).send("Missing user name");
 
     if (!req.body) // request must contain data
         return res.status(400).send("Missing user data");
 
-    const u = await Usr.findById(req.params.id);
-    if (u === undefined)  // did we fail to find a matching user?
-        return res.status(404).send("User ID " + req.params.id + " not found");
+    const u = await Usr.findOne({ where: { name: req.params.name } });
+    if (u === undefined || u == null)  // did we fail to find a matching user?
+        return res.status(404).send("User name " + req.params.name + " not found");
 
     // update as a subresource
     if (req.params.prop) {
@@ -86,12 +86,12 @@ exports.updateUser = async (req, res) => {
 
 // Delete a user resource
 exports.deleteUser = async (req, res) => {
-    if (!req.params.id) // request must provide an id parameter
-        return res.status(400).send("Missing user ID");
+    if (!req.params.name) // request must provide a name parameter
+        return res.status(400).send("Missing user name");
 
-    const u = await Usr.findById(req.params.id);
+    const u = await Usr.findOne({ where: { name: req.params.name } });
     if (u === undefined || u == null)  // did we fail to find a matching User?
-        return res.status(404).send("Student ID " + req.params.id + " not found");
+        return res.status(404).send("User name " + req.params.name + " not found");
 
     try {
         await u.destroy();

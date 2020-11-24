@@ -10,13 +10,13 @@ router.route("/users")
   .post(usrCtlr.createUser);
 
 // route for an individual user resource
-router.route("/users/:id")
+router.route("/users/:name")
   .get(usrCtlr.readUser)
   .put(usrCtlr.updateUser)
   .delete(usrCtlr.deleteUser);
 
 // route for a user and property  
-router.route("/users/:id/:prop")
+router.route("/users/:name/:prop")
   .get(usrCtlr.readUser)
   .put(usrCtlr.updateUser);
 
