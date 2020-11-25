@@ -16,7 +16,8 @@ const User = db.define("user", {
     name: { type: Seq.STRING, allowNull: false },
     dateJoined: { type: Seq.STRING },
     currentLocation: { type: Seq.STRING, defaultValue: "Home" },
-    tourType: { type: Seq.STRING, defaultValue: "Short" }
+    tourType: { type: Seq.STRING, defaultValue: "Short" },
+    favorites: {type: Seq.JSON, defaultValue:{"none":"none"}}
 });
 
 db.sync()
