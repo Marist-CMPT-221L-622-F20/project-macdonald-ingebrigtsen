@@ -48,71 +48,12 @@ window.addEventListener("load", function () {
             });
     });
 
-    run();
-    function run() {
-        const favoriteAlliedImg = document.getElementById("favoriteAllied");
-        const userName = window.sessionStorage.getItem('userName');
-        fetch(apiBase + "/users/" + userName)
-            .then(res => res.json()) // parse response as JSON
-            .then(user => {
-                let favs = JSON.parse(user.favorites);
-                if (favs.alliedSide == true) {
-                    favoriteAlliedImg.src = "/images/favorite.jpg"
-                } else {
-                    favoriteAlliedImg.src = "/images/non-favorite.png"
-                }
-            });
-    }
-
-    //////////////////////////////////////
-
-    const favoriteAlliedImg = document.getElementById("favoriteAllied");
-    favoriteAlliedImg.addEventListener("click", function (evt) {
-        const userName = window.sessionStorage.getItem('userName');
-        fetch(apiBase + "/users/" + userName)
-            .then(res => res.json()) // parse response as JSON
-            .then(user => {
-                let favs = JSON.parse(user.favorites);
-                if (favs.hasOwnProperty("alliedSide") && favs.alliedSide == true) {
-                    console.log("already there " + favs.alliedSide);
-                    favs.alliedSide = false;
-                    console.log(favs);
-                } else {
-                    console.log("not there or is false");
-                    favs.alliedSide = true;
-                    console.log(favs);
-                }
-
-                if (favs.alliedSide == true) {
-                    favoriteAlliedImg.src = "/images/favorite.jpg"
-                } else {
-                    favoriteAlliedImg.src = "/images/non-favorite.png"
-                }
-
-                const messageData = { favorites: favs };
-                fetch(apiBase + "/users/" + userName, {
-                    method: "PUT",
-                    body: JSON.stringify(messageData),
-                    headers: {
-                        "Content-type": "application/json"
-                    }
-                })
-                    .then(res => {
-                        if (res.status === 500) {
-                            const outputElem = document.querySelector("output");
-                            outputElem.innerHTML = "Something went wrong";
-                        }
-                        else if (res.status === 204) {
-                            const outputElem = document.querySelector("output");
-                            outputElem.innerHTML = "Favorite modified";
-                        }
-
-                        // TODO add some error-handling
-                    });
+    favoriteUpdater("favoriteAllied", "alliedSide");
+    favoriteUpdater("favoriteJungle", "Jungle");
+    favoriteUpdater("favoriteLanes", "Lanes");
+    favoriteUpdater("favoriteRiver", "River");
 
 
-            });
-    });
 });
 
 
@@ -143,6 +84,77 @@ function updateData(location) {
     image4.src = location.image4;
 }
 
+
+
+
+function favoriteUpdater(imgID, nameInDatabase) {
+
+    run();
+    function run() {
+        const favoriteImg = document.getElementById(imgID);
+        const userName = window.sessionStorage.getItem('userName');
+        fetch(apiBase + "/users/" + userName)
+            .then(res => res.json()) // parse response as JSON
+            .then(user => {
+                let favs = JSON.parse(user.favorites);
+                if (favs[nameInDatabase] == true) {
+                    favoriteImg.src = "/images/favorite.jpg"
+                } else {
+                    favoriteImg.src = "/images/non-favorite.png"
+                }
+            });
+    }
+
+    //////////////////////////////////////
+
+    const favoriteImg = document.getElementById(imgID);
+    favoriteImg.addEventListener("click", function (evt) {
+        const userName = window.sessionStorage.getItem('userName');
+        fetch(apiBase + "/users/" + userName)
+            .then(res => res.json()) // parse response as JSON
+            .then(user => {
+                let favs = JSON.parse(user.favorites);
+                if (favs.hasOwnProperty(nameInDatabase) && favs[nameInDatabase] == true) {
+                    console.log("already there " + favs[nameInDatabase]);
+                    favs[nameInDatabase] = false;
+                    console.log(favs);
+                } else {
+                    console.log("not there or is false");
+                    favs[nameInDatabase] = true;
+                    console.log(favs);
+                }
+
+                if (favs[nameInDatabase] == true) {
+                    favoriteImg.src = "/images/favorite.jpg"
+                } else {
+                    favoriteImg.src = "/images/non-favorite.png"
+                }
+
+                const messageData = { favorites: favs };
+                fetch(apiBase + "/users/" + userName, {
+                    method: "PUT",
+                    body: JSON.stringify(messageData),
+                    headers: {
+                        "Content-type": "application/json"
+                    }
+                })
+                    .then(res => {
+                        if (res.status === 500) {
+                            const outputElem = document.querySelector("output");
+                            outputElem.innerHTML = "Something went wrong";
+                        }
+                        else if (res.status === 204) {
+                            const outputElem = document.querySelector("output");
+                            outputElem.innerHTML = "Favorite modified";
+                        }
+
+                        // TODO add some error-handling
+                    });
+
+
+            });
+    });
+}
 
 
 
